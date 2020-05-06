@@ -28,9 +28,12 @@ public class AgendaController {
 		return agenda.recupera(id).getTelefon();
 	}
 	
+	
 	@RequestMapping(path="/contacte/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public Persona infoContacto(@PathVariable String id) {
+	public Persona personaContacto(@PathVariable String id) {
 		return new Persona(id, agenda.recupera(id).getNom(), agenda.recupera(id).getTelefon());
 	}
+	
+	
 }

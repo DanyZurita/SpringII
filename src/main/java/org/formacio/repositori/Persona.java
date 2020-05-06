@@ -1,7 +1,6 @@
 package org.formacio.repositori;
 
 
-
 public class Persona {
 
 	private String clau;

@@ -17,16 +17,16 @@ public class AgendaController {
 	@Autowired
 	private AgendaService agenda;
 	
-	@RequestMapping(path="/nombre")
+	@RequestMapping(path="/nombre", method=RequestMethod.GET)
 	@ResponseBody
 	public int numeroContactos() {
 		return agenda.nombreContactes();
 	}
 	
 
-	@RequestMapping(path="/telefon")
+	@RequestMapping(path="/telefon", method=RequestMethod.GET)
 	@ResponseBody
-	public String numeroContactos(String id) {
+	public String numeroContactos(@RequestParam String id) {
 		return agenda.recupera(id).getTelefon();
 	}
 	

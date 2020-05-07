@@ -31,7 +31,7 @@ public class AgendaController {
 	}
 	
 	
-	@RequestMapping(path="/contacte/{id}", produces={MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+	@RequestMapping(path="/contacte/{id}", method=RequestMethod.GET, produces={MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
 	@ResponseBody
 	public Persona personaContacto(@PathVariable String id) {
 		if(agenda.recupera(id) == null){

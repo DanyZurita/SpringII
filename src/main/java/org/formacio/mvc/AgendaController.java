@@ -5,7 +5,6 @@ import org.formacio.repositori.Persona;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,7 +31,7 @@ public class AgendaController {
 	}
 	
 	
-	@RequestMapping(path="/contacte/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(path="/contacte/{id}", produces={MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
 	@ResponseBody
 	public Persona personaContacto(@PathVariable String id) {
 		if(agenda.recupera(id) == null){
@@ -44,12 +43,9 @@ public class AgendaController {
 	
 	@RequestMapping(path="/afegir", method=RequestMethod.POST)
 	@ResponseBody
-	public String insertContacto(@RequestParam(name="id",
-								required=true) String id,
-								@RequestParam(name="nom",
-								required=true) String nom, 
-								@RequestParam(name="telefon",
-								required=true) String telefon) {
+	public String insertContacto(@RequestParam String id,
+								@RequestParam String nom, 
+								@RequestParam String telefon) {
 		agenda.inserta(id, nom, telefon);
 		return "ok";
 	}

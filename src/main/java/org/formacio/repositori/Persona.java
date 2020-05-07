@@ -1,7 +1,9 @@
 package org.formacio.repositori;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public class Persona {
 
 	private String clau;
@@ -13,7 +15,8 @@ public class Persona {
 	
 	public Persona() {
 	}
-
+	
+	
 	public Persona(String clau, String nom, String telefon) {
 		this.clau = clau;
 		this.nom = nom;

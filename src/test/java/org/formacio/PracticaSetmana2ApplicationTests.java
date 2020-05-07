@@ -73,7 +73,7 @@ public class PracticaSetmana2ApplicationTests {
 	}
 
 	/**
-	 * Modifiqueu el que sigui necessari per a que accepti XML
+	 * Modifiqueu el que sigui necessari per a que accepti XML 
 	 */
 	@Test
 	public void test_contacte_xml() throws Exception {
